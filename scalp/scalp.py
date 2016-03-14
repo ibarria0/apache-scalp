@@ -461,7 +461,7 @@ def generate_xml_file(flag, access, filters, odir):
                 name = " name=\"%s\"" % names[attack_type]
             out.write("  <attack type=\"%s\"%s>\n" % (attack_type, name))
             impacts = flag[attack_type].keys()
-            impacts.sort(reverse=True)
+            list(impacts).sort(reverse=True)
             for i in impacts:
                 out.write("    <impact value=\"%d\">\n" % int(i))
                 for e in flag[attack_type][i]:
